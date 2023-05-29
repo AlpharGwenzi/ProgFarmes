@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ProgFarmes.Models.farm_products>
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<style>
+    body {
+        background-image: url('/Images/sebastian-gomez-CAA5XShS_No-unsplash.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    table {
+        background-color: white;
+    }
+
+    .control-label {
+        color: white;
+    }
+
+    .btn {
+        color: white;
+        background-color: cornflowerblue;
+    }
+
+    code {
+        color: white;
+    }
+</style>
+
+
+<h2 style="color:white">Products</h2>
+
+<p>
+    @Html.ActionLink("Add New", "ProductsCreate", "Home")
+</p>
+
+@using (Html.BeginForm("Products", "Home", FormMethod.Get))
+{
+    <div>
+        <label class="control-label" style="color:white;">Filter by Date:</label>
+        <input type="date" name="startDate" id="startDate" />
+        <input type="date" name="endDate" id="endDate" />
+        <button type="submit" class="btn">Apply</button>
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOut)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="background-color: white;">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOut)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
