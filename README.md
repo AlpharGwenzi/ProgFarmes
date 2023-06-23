@@ -1,12 +1,17 @@
 # ProgFarmes
 Readme file:
-Description 
+##Description 
 Farm Central is a web store for a group of local farmers that decided to start a brick‐and‐mortar store where they can sell all their products under one roof. The Farm Central Stock Management Prototype is a web application developed using Visual Studio and C#. 
-Requirements:
+
+##Lecture notes based on feedback
+The application compiles and runs 
+The Applicaton was published to cloud and is available at: https://progfarmes20230623191236.azurewebsites.net
+
+##Requirements:
 To build and run the prototype, you will need the following tools:
 Visual Studio (version X or higher)
 SQL Server or SQL Server Express
-Getting Started:
+##Getting Started:
 Follow the steps below to build and run the Farm Central Stock Management Prototype:
 download the prototype repository from GitHub link.
 Open the solution file in Visual Studio.
@@ -14,7 +19,7 @@ Restore NuGet packages by right-clicking on the solution in Solution Explorer an
 Set up the database
 Build the solution by selecting "Build" from the Visual Studio menu.
 Run the application
-Usage:
+##Usage:
 here are dummy data for employee log in 
 
 EmployeeID
